@@ -13,6 +13,13 @@ SlidingBfsReference.py contains the iterative breadth-first search implementatio
 Sliding.py defines helper functions to produce solutions and children of WxH Sliding puzzle "objects" (which are Python tuples).
 
 After running the MapReduce job, the program writes to a text file in the following form. (for example, for a 2x2 case):
+
+0 ('A', 'B', 'C', '-')
+2. item
+3. item
+
+
+
 0 ('A', 'B', 'C', '-')
 1 ('A', '-', 'C', 'B')
 1 ('A', 'B', '-', 'C')
