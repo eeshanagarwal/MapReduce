@@ -1,5 +1,6 @@
 # MapReduce
-MapReduce using Apache Spark framework; Strongly solving the "15 Puzzle"
+MapReduce using Apache Spark framework; Strongly solving the "15 Puzzle".
+
 Puzzles like the "15 Puzzle" have the property that you can get from any position (a particular unique configuration of the puzzle) to another; there are no "dead ends".
 In this project, I wrote a breadth-first solver that starts from the single solution position, and walks the graph, recording every new position it reaches (and how many moves it took to get there - called the level).
 Unlike breadth-first search, in which you stop when you've found a particular position, here I exhaustively visit the entire graph (strongly solving).
