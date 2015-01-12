@@ -14,24 +14,18 @@ Sliding.py defines helper functions to produce solutions and children of WxH Sli
 
 After running the MapReduce job, the program writes to a text file in the following form. (for example, for a 2x2 case):
 
-0 ('A', 'B', 'C', '-')
-2. item
-3. item
-
-
-
-0 ('A', 'B', 'C', '-')
-1 ('A', '-', 'C', 'B')
-1 ('A', 'B', '-', 'C')
-2 ('-', 'A', 'C', 'B')
-2 ('-', 'B', 'A', 'C')
-3 ('B', '-', 'A', 'C')
-3 ('C', 'A', '-', 'B')
-4 ('B', 'C', 'A', '-')
-4 ('C', 'A', 'B', '-')
-5 ('B', 'C', '-', 'A')
-5 ('C', '-', 'B', 'A')
-6 ('-', 'C', 'B', 'A')	
+0. ('A', 'B', 'C', '-')
+1. ('A', '-', 'C', 'B')
+1. ('A', 'B', '-', 'C')
+2. ('-', 'A', 'C', 'B')
+2. ('-', 'B', 'A', 'C')
+3. ('B', '-', 'A', 'C')
+3. ('C', 'A', '-', 'B')
+4. ('B', 'C', 'A', '-')
+4. ('C', 'A', 'B', '-')
+5. ('B', 'C', '-', 'A')
+5. ('C', '-', 'B', 'A')
+6. ('-', 'C', 'B', 'A')	
 
 For more on Spark-Python API : http://spark.apache.org/docs/latest/api/python/pyspark-module.html
 
