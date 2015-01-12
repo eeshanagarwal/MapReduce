@@ -44,7 +44,7 @@ def solve_puzzle(master, output, height, width, slaves):
                 check = 1 #if the size has not changed, we are done transforming the rdd
 
         if level % 8 == 0: #partion the rdd on every 8th iteration
-            rdd = rdd.partitionBy(PARTITION_COUNT, lambda x: hash(x)) #hash-partition the rdd into 16 partitions and with accordance to python's default hash function
+            rdd = rdd.partitionBy(PARTITION_COUNT, lambda x: hash(x)) #hash-partition the rdd into PARTITION_COUNT partitions and with accordance to python's default hash function
 
         level = level + 1
 
@@ -57,11 +57,7 @@ def solve_puzzle(master, output, height, width, slaves):
 
 
 
-""" DO NOT EDIT PAST THIS LINE
-
-You are welcome to read through the following code, but you
-do not need to worry about understanding it.
-"""
+""" DO NOT EDIT PAST THIS LINE """
 
 def main():
     """
