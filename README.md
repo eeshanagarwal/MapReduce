@@ -8,10 +8,10 @@ To do this, we keep track of two mappings:
 pos_to_level: Given a position, what is its level? 
 level_to_pos: Given a level, what are all the positions?
 
-SlidingBfsSpark.py contains the MapReduce job to solve a (Width x Height) Sliding puzzle.
-Makefile defines the configurations for the run commands including the size of the sliding puzzle, and the level of parallelism to use. 
-SlidingBfsReference.py contains the iterative breadth-first search implementation of a Sliding puzzle solver described above. This is used to  verify the correctness of the output.
-Sliding.py defines helper functions to produce solutions and children of WxH Sliding puzzle "objects" (which are Python tuples).
+- SlidingBfsSpark.py contains the MapReduce job to solve a (Width x Height) Sliding puzzle.
+- Makefile defines the configurations for the run commands including the size of the sliding puzzle, and the level of parallelism to use. 
+- SlidingBfsReference.py contains the iterative breadth-first search implementation of a Sliding puzzle solver described above. This is used to  verify the correctness of the output.
+- Sliding.py defines helper functions to produce solutions and children of WxH Sliding puzzle "objects" (which are Python tuples).
 
 After running the MapReduce job, the program writes to a text file in the following form. (for example, for a 2x2 case):
 
