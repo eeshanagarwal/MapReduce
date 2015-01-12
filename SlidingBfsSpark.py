@@ -1,14 +1,13 @@
 from pyspark import SparkContext
 import Sliding, argparse
 
-
 def bfs_map(value):
     if value[1] != level:   #check if the level of the configuration passed in matches the current level
         return [value] #if it doesn't match the current level, return without re-mapping it (ie. do not call children on it)
     children = []
     children.append((value[0], level))
-    for child in Sliding.children(WIDTH, HEIGHT, hash_to_board(WIDTH, HEIGHT,value[0])): #get a list of all the children for the current configuration
-        children.append((board_to_hash(WIDTH,HEIGHT,child), level+1))   #append every child to the list of children
+    for child in Sliding.children(WIDTH, HEIGHT, Sliding.hash_to_board(WIDTH, HEIGHT,value[0])): #get a list of all the children for the current configuration
+        children.append((Sliding.board_to_hash(WIDTH,HEIGHT,child), level+1))   #append every child to the list of children
     return children
 
 def bfs_reduce(value1, value2):
@@ -25,7 +24,7 @@ def solve_puzzle(master, output, height, width, slaves):
 
     sol = Sliding.solution(WIDTH, HEIGHT)
     
-    rdd = sc.parallelize([(board_to_hash(WIDTH,HEIGHT,sol), level)]) #create an RDD from sol
+    rdd = sc.parallelize([(Sliding.board_to_hash(WIDTH,HEIGHT,sol),level)]) #create an RDD from sol
   
     """ YOUR MAP REDUCE PROCESSING CODE HERE """
     size= WIDTH*HEIGHT*2 #store twice the size of the current configuration
